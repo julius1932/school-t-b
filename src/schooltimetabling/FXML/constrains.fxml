@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="schooltimetabling.ConstrainsController">
+   <children>
+      <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="624.0" prefWidth="888.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab text="Overal Constrains">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TabPane layoutY="8.0" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <tabs>
+                            <Tab text="View">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TableView fx:id="overalTable" layoutX="12.0" layoutY="83.0" prefHeight="104.0" prefWidth="699.0">
+                                            <columns>
+                                              <TableColumn fx:id="prds" prefWidth="33.0" text="Prds" />
+                                              <TableColumn fx:id="b4brk" prefWidth="45.0" text="B4  Bk" />
+                                                <TableColumn fx:id="brkTime" prefWidth="56.0" text="Brk Time" />
+                                                <TableColumn fx:id="brkLngth" prefWidth="63.0" text="Brk Lngth" />
+                                                <TableColumn fx:id="b4lnch" prefWidth="50.0" text="B4 Lnch" />
+                                                <TableColumn fx:id="lnchTime" prefWidth="60.0" text="Lnch Tim" />
+                                                <TableColumn fx:id="lnch" prefWidth="54.0" text="Lnch" />
+                                                <TableColumn fx:id="aftaLnch" prefWidth="68.0" text="Aft Lnch" />
+                                                <TableColumn fx:id="days" prefWidth="69.0" text="Days" />
+                                                <TableColumn fx:id="strtTime" prefWidth="73.0" text="Start Time" />
+                                                <TableColumn fx:id="lesnDration" prefWidth="126.0" text="Lesson Duration" />
+                                            </columns>
+                                          </TableView>
+                                          <Label layoutX="12.0" layoutY="57.0" prefHeight="26.0" prefWidth="253.0" text="Overal Constrains">
+                                             <font>
+                                                <Font name="System Bold Italic" size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <TableView fx:id="sportsTable" layoutX="11.0" layoutY="264.0" prefHeight="139.0" prefWidth="701.0">
+                                            <columns>
+                                              <TableColumn fx:id="sprtyDay" prefWidth="698.0" text="Day" />
+                                            </columns>
+                                          </TableView>
+                                          <Label layoutX="11.0" layoutY="234.0" prefHeight="26.0" prefWidth="253.0" text="Sports Days">
+                                             <font>
+                                                <Font name="System Bold Italic" size="20.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                            <Tab text="Enter">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <JFXTextField fx:id="numPeriodsPerDay" labelFloat="true" layoutX="55.0" layoutY="103.0" prefHeight="25.0" prefWidth="262.0" promptText="Number of Periods Per day" />
+                                          <JFXTextField fx:id="periodsBeforeLuanch" labelFloat="true" layoutX="55.0" layoutY="221.0" prefHeight="25.0" prefWidth="263.0" promptText="Number of Periods  Before Luanch" />
+                                          <JFXTextField fx:id="periodsAfterLuanch" labelFloat="true" layoutX="52.0" layoutY="283.0" prefHeight="25.0" prefWidth="269.0" promptText="Number of Periods  after Luanch" />
+                                          <JFXTextField fx:id="periodsBeforeBreak" labelFloat="true" layoutX="55.0" layoutY="161.0" prefHeight="25.0" prefWidth="262.0" promptText="Number Periods Before Break" />
+                                          <JFXTextField fx:id="numDaysPerCycle" labelFloat="true" layoutX="55.0" layoutY="39.0" prefHeight="25.0" prefWidth="262.0" promptText="Number of Day Per Cycle" />
+                                          <JFXListView fx:id="sportDays" layoutX="55.0" layoutY="350.0" prefHeight="87.0" prefWidth="264.0" />
+                                          <Label layoutX="54.0" layoutY="333.0" prefHeight="17.0" prefWidth="265.0" text="Sports Days" />
+                                          <JFXButton buttonType="RAISED" layoutX="531.0" layoutY="457.0" onAction="#clearOveralFields" prefHeight="33.0" prefWidth="102.0" ripplerFill="WHITE" style="-fx-background-color: #2196f3;" text="Cancel" textFill="WHITE" />
+                                          <JFXButton buttonType="RAISED" layoutX="73.0" layoutY="457.0" onAction="#saveOveralConstrains" prefHeight="33.0" prefWidth="102.0" ripplerFill="WHITE" style="-fx-background-color: #2196f3;" text="Save" textFill="WHITE" />
+                                          <JFXTextField fx:id="breakTime" labelFloat="true" layoutX="375.0" layoutY="103.0" prefHeight="25.0" prefWidth="262.0" promptText="Time to Start Break" />
+                                          <JFXTextField fx:id="lessesonDuration" labelFloat="true" layoutX="375.0" layoutY="221.0" prefHeight="25.0" prefWidth="263.0" promptText="Duration of Lesson in Minutes" />
+                                          <JFXTextField fx:id="breakDuration" labelFloat="true" layoutX="372.0" layoutY="296.0" prefHeight="25.0" prefWidth="269.0" promptText="Duration of Break in Minutes" />
+                                          <JFXTextField fx:id="launchTime" labelFloat="true" layoutX="376.0" layoutY="161.0" prefHeight="25.0" prefWidth="262.0" promptText="Time to Start Luanch" />
+                                          <JFXTextField fx:id="startTime" labelFloat="true" layoutX="377.0" layoutY="39.0" prefHeight="25.0" prefWidth="262.0" promptText="Time to Start Lesson" />
+                                          <JFXTextField fx:id="luanchDuration" labelFloat="true" layoutX="373.0" layoutY="394.0" prefHeight="25.0" prefWidth="269.0" promptText="Duration of Luanch in Minutes" />
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                          </tabs>
+                        </TabPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Subjects Constrains">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TabPane layoutX="85.0" layoutY="109.0" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <tabs>
+                            <Tab text="Add">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <JFXListView fx:id="subjects" layoutX="52.0" layoutY="77.0" prefHeight="114.0" prefWidth="310.0" />
+                                          <Label layoutX="52.0" layoutY="60.0" prefHeight="17.0" prefWidth="187.0" text="Subjects" />
+                                          <JFXListView fx:id="level" layoutX="52.0" layoutY="234.0" prefHeight="155.0" prefWidth="310.0" />
+                                          <Label layoutX="52.0" layoutY="217.0" prefHeight="17.0" prefWidth="187.0" text="Level/form/Grade" />
+                                          <JFXListView fx:id="prefferedLesson" layoutX="410.0" layoutY="234.0" prefHeight="155.0" prefWidth="310.0" />
+                                          <Label layoutX="410.0" layoutY="217.0" prefHeight="17.0" prefWidth="187.0" text="Prefered Lessons" />
+                                          <JFXTextField fx:id="subPeriods" labelFloat="true" layoutX="410.0" layoutY="77.0" prefHeight="46.0" prefWidth="305.0" promptText=" Number of Periods Per Cycle" />
+                                          <JFXButton buttonType="RAISED" layoutX="589.0" layoutY="440.0" onAction="#clearFields" prefHeight="33.0" prefWidth="102.0" ripplerFill="WHITE" style="-fx-background-color: #2196f3;" text="Cancel" textFill="WHITE" />
+                                          <JFXButton buttonType="RAISED" layoutX="156.0" layoutY="440.0" onAction="#saveSubjectConstrains" prefHeight="33.0" prefWidth="102.0" ripplerFill="WHITE" style="-fx-background-color: #2196f3;" text="Save" textFill="WHITE" />
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                            <Tab text="View ">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TableView fx:id="overalSubjectTable" layoutX="56.0" layoutY="75.0" prefHeight="278.0" prefWidth="577.0">
+                                            <columns>
+                                              <TableColumn fx:id="overalSubjectColmn" prefWidth="315.0" text="Subject" />
+                                              <TableColumn fx:id="levelColmn" prefWidth="156.0" text="Level" />
+                                                <TableColumn fx:id="prdsColmn" prefWidth="104.0" text="Periods Per Cycle" />
+                                            </columns>
+                                          </TableView>
+                                          <Label layoutX="56.0" layoutY="45.0" prefHeight="26.0" prefWidth="253.0" text="Overal Subject Constrains">
+                                             <font>
+                                                <Font name="System Bold Italic" size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <TableView fx:id="durationTable" layoutX="56.0" layoutY="408.0" prefHeight="109.0" prefWidth="577.0">
+                                             <columns>
+                                                <TableColumn fx:id="preferedPrdsColmn" prefWidth="576.0" text="Number of Periods" />
+                                             </columns>
+                                          </TableView>
+                                          <Label fx:id="titleLabel" layoutX="56.0" layoutY="378.0" prefHeight="30.0" prefWidth="577.0" text="Prefered Duration">
+                                             <font>
+                                                <Font name="System Bold Italic" size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <JFXComboBox fx:id="subSearchKey" layoutX="420.0" layoutY="14.0" onAction="#fillSubjectConstrains" prefHeight="25.0" prefWidth="207.0" promptText="Select Subject" />
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                              <Tab text="Combined Subjects">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TabPane layoutX="20.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <tabs>
+                                              <Tab text="Combine">
+                                                <content>
+                                                  <AnchorPane fx:id="combinedArchorPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                         <children>
+                                                            <JFXComboBox fx:id="combanedKlassCombo" labelFloat="true" layoutX="155.0" layoutY="34.0" onAction="#setCombinedKlassList" prefHeight="34.0" prefWidth="347.0" promptText="Class" />
+                                                            <JFXButton buttonType="RAISED" layoutX="169.0" layoutY="444.0" onAction="#saveCombinedSubjects" prefHeight="33.0" prefWidth="102.0" ripplerFill="WHITE" style="-fx-background-color: #2196f3;" text="Save" textFill="WHITE" />
+                                                            <JFXButton buttonType="RAISED" layoutX="412.0" layoutY="444.0" onAction="#clearFields" prefHeight="33.0" prefWidth="102.0" ripplerFill="WHITE" style="-fx-background-color: #2196f3;" text="Cancel" textFill="WHITE" />
+                                                            <Label layoutX="155.0" layoutY="116.0" prefHeight="17.0" prefWidth="237.0" text="Teacher ,Subject , Class " underline="true">
+                                                               <font>
+                                                                  <Font name="System Bold" size="12.0" />
+                                                               </font></Label>
+                                                         </children>
+                                                      </AnchorPane>
+                                                </content>
+                                              </Tab>
+                                              <Tab text="View Combined">
+                                                <content>
+                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                         <children>
+                                                            <JFXComboBox fx:id="combinedKlassSearch" labelFloat="true" layoutX="149.0" layoutY="49.0" onAction="#fillCombinedRootTable" prefHeight="25.0" prefWidth="270.0" promptText="Class" />
+                                                            <TableView fx:id="combinedTableRoot" layoutX="87.0" layoutY="127.0" prefHeight="296.0" prefWidth="332.0">
+                                                               <columns>
+                                                                  <TableColumn fx:id="combinedColumnRoot" prefWidth="287.0" text="Combined Subjects " />
+                                                               </columns>
+                                                            </TableView>
+                                                            <Separator layoutX="489.0" layoutY="8.0" orientation="VERTICAL" prefHeight="538.0" prefWidth="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                            <TableView fx:id="combinedTable" layoutX="511.0" layoutY="136.0" prefHeight="296.0" prefWidth="332.0">
+                                                               <columns>
+                                                                  <TableColumn fx:id="combinedColumn" prefWidth="287.0" text="Combined Subjects " />
+                                                               </columns>
+                                                            </TableView>
+                                                         </children>
+                                                      </AnchorPane>
+                                                </content>
+                                              </Tab>
+                                            </tabs>
+                                          </TabPane>
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </Tab>
+                              <Tab text="Shared Subjects">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TabPane layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <tabs>
+                                              <Tab text="Share">
+                                                <content>
+                                                  <AnchorPane fx:id="sharedArchorPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                         <children>
+                                                            <JFXComboBox fx:id="levelShared" labelFloat="true" layoutX="164.0" layoutY="32.0" onAction="#setSubTrKlasShared" prefHeight="34.0" prefWidth="347.0" promptText="Class" />
+                                                            <JFXButton buttonType="RAISED" layoutX="164.0" layoutY="456.0" onAction="#saveSharedSubjects" prefHeight="33.0" prefWidth="102.0" ripplerFill="WHITE" style="-fx-background-color: #2196f3;" text="Save" textFill="WHITE" />
+                                                            <JFXButton buttonType="RAISED" layoutX="411.0" layoutY="456.0" onAction="#clearFields" prefHeight="33.0" prefWidth="102.0" ripplerFill="WHITE" style="-fx-background-color: #2196f3;" text="Cancel" textFill="WHITE" />
+                                                            <Label layoutX="164.0" layoutY="147.0" prefHeight="17.0" prefWidth="237.0" text="Subject , Class  and Teacher" underline="true">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font></Label>
+                                                            <JFXComboBox fx:id="subShared" labelFloat="true" layoutX="164.0" layoutY="90.0" onAction="#setSubTrKlasShared" prefHeight="34.0" prefWidth="347.0" promptText="Subject" />
+                                                         </children>
+                                                      </AnchorPane>
+                                                </content>
+                                              </Tab>
+                                              <Tab text="View Shared">
+                                                <content>
+                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                         <children>
+                                                            <TableView fx:id="sharedRootTable" layoutX="58.0" layoutY="110.0" prefHeight="335.0" prefWidth="305.0">
+                                                               <columns>
+                                                                  <TableColumn fx:id="sharedRootColumn" prefWidth="300.0" text="Shared Subjects " />
+                                                               </columns>
+                                                            </TableView>
+                                                            <JFXComboBox fx:id="klassSharedSearch" labelFloat="true" layoutX="156.0" layoutY="44.0" onAction="#fillSharedSubjectRoot" prefHeight="25.0" prefWidth="207.0" promptText="Class" />
+                                                            <Separator layoutX="444.0" orientation="VERTICAL" prefHeight="524.0" prefWidth="22.0" />
+                                                            <TableView fx:id="sharedTable" layoutX="466.0" layoutY="109.0" prefHeight="349.0" prefWidth="305.0">
+                                                               <columns>
+                                                                  <TableColumn fx:id="sharedTableColumn" prefWidth="300.0" text="Shared Subjects " />
+                                                               </columns>
+                                                            </TableView>
+                                                         </children>
+                                                      </AnchorPane>
+                                                </content>
+                                              </Tab>
+                                            </tabs>
+                                          </TabPane>
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </Tab>
+                          </tabs>
+                        </TabPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

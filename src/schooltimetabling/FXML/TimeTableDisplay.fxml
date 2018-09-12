@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="658.0" prefWidth="1306.0" stylesheets="@../CSS/styles.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="schooltimetabling.TimeTableController">
+   <children>
+      <TabPane layoutX="-6.0" prefHeight="625.0" prefWidth="1306.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Saved TimeTables">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="596.0" prefWidth="1315.0">
+                     <children>
+                        <TableView fx:id="savedTimeTables" layoutX="49.0" layoutY="65.0" prefHeight="491.0" prefWidth="290.0">
+                          <columns>
+                            <TableColumn fx:id="colmnRef" prefWidth="75.0" text="REF" />
+                            <TableColumn fx:id="colmnRefDate" prefWidth="212.0" text="DATE TIME" />
+                          </columns>
+                        </TableView>
+                        <Label layoutX="49.0" layoutY="41.0" prefHeight="17.0" prefWidth="202.0" text="Saved TimeTables" />
+                        <JFXButton layoutX="287.0" layoutY="37.0" onAction="#showSavedTimeTables" text="Show" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Time Tables">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TabPane layoutX="14.0" prefHeight="590.0" prefWidth="1295.0" tabClosingPolicy="UNAVAILABLE">
+                          <tabs>
+                            <Tab text="Master Time Table">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <JFXButton buttonType="RAISED" layoutX="887.0" layoutY="490.0" onAction="#generateTimeTable" prefHeight="25.0" prefWidth="145.0" styleClass="leftButton" text="Genarate Time Table" textFill="WHITE" />
+                                          <JFXComboBox fx:id="dayMasterComboBox" labelFloat="true" layoutX="706.0" layoutY="14.0" onAction="#fillMasterTimeTablePerDay" prefHeight="27.0" prefWidth="316.0" promptText="DAY " />
+                                          <TableView fx:id="masterTableV" layoutX="90.0" layoutY="62.0" prefHeight="391.0" prefWidth="942.0" tableMenuButtonVisible="true">
+                                            <columns>
+                                              <TableColumn prefWidth="75.0" text="C1" />
+                                              <TableColumn prefWidth="75.0" text="C2" />
+                                            </columns>
+                                          </TableView>
+                                          <JFXButton buttonType="RAISED" layoutX="90.0" layoutY="15.0" onAction="#showClashes" prefHeight="25.0" prefWidth="97.0" text="Show Clashes" />
+                                          <JFXButton buttonType="RAISED" layoutX="187.0" layoutY="15.0" onAction="#showBreakLunchOverlaps" prefHeight="25.0" prefWidth="110.0" text="Show Overlaps" />
+                                          <JFXButton buttonType="RAISED" layoutX="454.0" layoutY="15.0" onAction="#backTrack" prefHeight="25.0" prefWidth="110.0" text="Back Track" />
+                                          <JFXButton buttonType="RAISED" layoutX="316.0" layoutY="15.0" onAction="#showAnomalise" prefHeight="25.0" prefWidth="110.0" text="Show Anomalies" />
+                                          <JFXButton buttonType="RAISED" layoutX="682.0" layoutY="490.0" onAction="#saveTimeTable" prefHeight="25.0" prefWidth="154.0" styleClass="leftButton" text="Save TimeTable" textFill="WHITE" />
+                                          <JFXButton layoutX="90.0" layoutY="490.0" onAction="#downloadMasterReportTimeTable" prefHeight="25.0" prefWidth="184.0" text="Download Master TimeTable " />
+                                          <JFXButton layoutX="274.0" layoutY="490.0" onAction="#viewMasterReportTimeTable" prefHeight="25.0" prefWidth="184.0" text="View Master TimeTable " />
+                                          <JFXButton layoutX="446.0" layoutY="490.0" onAction="#downloadWholeSchoolTimeTable" prefHeight="25.0" prefWidth="210.0" text="Download Whole School TimeTable" />
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                            <Tab text="Class Time Table">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TableView fx:id="klassTable" layoutX="27.0" layoutY="71.0" prefHeight="410.0" prefWidth="1044.0">
+                                            <columns>
+                                              <TableColumn prefWidth="75.0" text="C1" />
+                                              <TableColumn prefWidth="75.0" text="C2" />
+                                            </columns>
+                                          </TableView>
+                                          <JFXComboBox fx:id="klasTimCombobox" labelFloat="true" layoutX="712.0" layoutY="31.0" onAction="#fillKlassTimeTablePerDay" prefHeight="25.0" prefWidth="358.0" promptText="Class" />
+                                          <JFXButton layoutX="160.0" layoutY="501.0" onAction="#downloadKlassReportTimeTable" prefHeight="25.0" prefWidth="184.0" text="Download Class TimeTable " />
+                                          <JFXButton layoutX="380.0" layoutY="501.0" onAction="#viewKlassReportTimeTable" prefHeight="25.0" prefWidth="184.0" text="View Class TimeTable " />
+                                       </children></AnchorPane>
+                              </content>
+                            </Tab>
+                              <Tab text="Teachers' Time Table">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TableView fx:id="trTable" layoutX="47.0" layoutY="76.0" prefHeight="410.0" prefWidth="1044.0">
+                                             <columns>
+                                                <TableColumn prefWidth="75.0" text="C1" />
+                                                <TableColumn prefWidth="75.0" text="C2" />
+                                             </columns>
+                                          </TableView>
+                                          <JFXComboBox fx:id="trTimComboBox" layoutX="785.0" layoutY="27.0" onAction="#fillTrTimeTable" prefHeight="25.0" prefWidth="306.0" />
+                                          <JFXButton layoutX="229.0" layoutY="508.0" onAction="#downloadTrReportTimeTable" prefHeight="25.0" prefWidth="184.0" text="Download Class TimeTable " />
+                                          <JFXButton layoutX="413.0" layoutY="508.0" onAction="#viewTrReportTimeTable" prefHeight="25.0" prefWidth="184.0" text="View Class TimeTable " />
+                                       </children></AnchorPane>
+                                 </content>
+                              </Tab>
+                          </tabs>
+                        </TabPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="TimeTable Stats">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="596.0" prefWidth="1315.0">
+                     <children>
+                        <TableView fx:id="discripanceTable" layoutX="227.0" layoutY="75.0" prefHeight="478.0" prefWidth="369.0">
+                          <columns>
+                            <TableColumn fx:id="disKlass" prefWidth="43.0" text="Class" />
+                            <TableColumn fx:id="disSub" prefWidth="122.0" text="Suject" />
+                              <TableColumn fx:id="disWeekly" prefWidth="101.0" text="Weekly Lessons" />
+                              <TableColumn fx:id="disLoged" prefWidth="100.0" text=" Lessons Logged" />
+                          </columns>
+                        </TableView>
+                        <JFXComboBox fx:id="disKlassComboBox" labelFloat="true" layoutX="449.0" layoutY="42.0" onAction="#fillDiscripancyTable" prefHeight="25.0" prefWidth="147.0" promptText="Class" />
+                        <TableView fx:id="freeTable" layoutX="41.0" layoutY="75.0" prefHeight="478.0" prefWidth="99.0">
+                           <columns>
+                              <TableColumn fx:id="freeDay" prefWidth="44.0" text="Day" />
+                              <TableColumn fx:id="freePeriod" prefWidth="53.0" text="Period" />
+                           </columns>
+                        </TableView>
+                        <Label layoutX="41.0" layoutY="58.0" prefHeight="17.0" prefWidth="83.0" text="Free" />
+                        <JFXButton layoutX="98.0" layoutY="17.0" onAction="#fillDiscp" prefHeight="25.0" prefWidth="61.0" text="fill Dis" />
+                        <JFXCheckBox fx:id="allSubsCheckBox" layoutX="227.0" layoutY="50.0" onAction="#fillDiscripancyTable" text="Shortfalls" />
+                        <JFXCheckBox fx:id="wholeSckCheckBox" layoutX="312.0" layoutY="50.0" text="Whole School" />
+                        <JFXButton layoutX="627.0" layoutY="240.0" onAction="#printShortages" prefHeight="37.0" prefWidth="125.0" styleClass="leftButton" text="Print Summary" />
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="JXML  CREATOR">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <JFXButton buttonType="RAISED" layoutX="198.0" layoutY="116.0" onAction="#createAndCompileJXML" prefHeight="25.0" prefWidth="267.0" styleClass="leftButton" text="CREATE JXML &amp;&amp; COMPILE" textFill="WHITE" />
+                        <JFXButton buttonType="RAISED" layoutX="198.0" layoutY="240.0" onAction="#compileJXML" prefHeight="25.0" prefWidth="267.0" styleClass="leftButton" text="CREATE JXML &amp;&amp; COMPILE" textFill="WHITE" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

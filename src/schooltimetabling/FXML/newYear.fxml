@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="schooltimetabling.NewYearController">
+   <children>
+      <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="669.0" prefWidth="1093.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab text="New Year">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <JFXButton buttonType="RAISED" layoutX="281.0" layoutY="221.0" onAction="#demoteLearnersToNextForm" prefHeight="33.0" prefWidth="407.0" ripplerFill="WHITE" style="-fx-background-color: #2196f3;" text="MOVE TO PREVIOUS  FROM" textFill="WHITE" />
+                        <JFXButton buttonType="RAISED" layoutX="289.0" layoutY="68.0" onAction="#promoteLearnersToNextForm" prefHeight="33.0" prefWidth="391.0" ripplerFill="WHITE" style="-fx-background-color: #2196f3;" text="MOVE LEARNERS TO NEXT FORM" textFill="WHITE" />
+                        <JFXButton buttonType="RAISED" layoutX="281.0" layoutY="331.0" onAction="#deleteOverLapClasses" prefHeight="33.0" prefWidth="407.0" ripplerFill="WHITE" style="-fx-background-color: #2196f3;" text="DELETE INVALID CLASSES" textFill="WHITE" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

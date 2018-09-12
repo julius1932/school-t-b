@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckMenuItem?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="skP" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="schooltimetabling.MainPageController">
+   <children>
+      <VBox prefHeight="600.0" prefWidth="900.0" stylesheets="@../CSS/styles.css">
+        <children>
+          <MenuBar prefHeight="33.0" prefWidth="900.0" VBox.vgrow="NEVER">
+            <menus>
+                  <Menu mnemonicParsing="false" text="File">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="New" />
+                        <MenuItem mnemonicParsing="false" text="Open…" />
+                        <Menu mnemonicParsing="false" text="Open Recent" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Close" />
+                        <MenuItem mnemonicParsing="false" text="Save" />
+                        <MenuItem mnemonicParsing="false" text="Save As…" />
+                        <MenuItem mnemonicParsing="false" text="Revert" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Preferences…" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Quit" />
+                     </items>
+                  </Menu>
+              <Menu mnemonicParsing="false" text="Edit">
+                <items>
+                  <MenuItem mnemonicParsing="false" text="Undo" />
+                  <MenuItem mnemonicParsing="false" text="Redo" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Cut" />
+                  <MenuItem mnemonicParsing="false" text="Copy" />
+                  <MenuItem mnemonicParsing="false" text="Paste" />
+                  <MenuItem mnemonicParsing="false" text="Delete" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Select All" />
+                  <MenuItem mnemonicParsing="false" text="Unselect All" />
+                </items>
+              </Menu>
+              <Menu mnemonicParsing="false" text="Settings">
+                <items>
+                        <CheckMenuItem fx:id="showAsRegCheckMenuItem" mnemonicParsing="false" onAction="#showAsRegCheckMenuItemAction" text="Show A/REG on timetable" />
+                </items>
+              </Menu>
+              <Menu mnemonicParsing="false" text="Help">
+                <items>
+                  <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+                </items>
+              </Menu>
+            </menus>
+          </MenuBar>
+            <ToolBar prefHeight="40.0" prefWidth="200.0">
+              <items>
+                  <JFXButton accessibleText="yearNew" buttonType="RAISED" onAction="#changeContentOfMainPage" prefHeight="22.0" prefWidth="67.0" styleClass="leftButton" text="New Year" />
+              </items>
+            </ToolBar>
+          <SplitPane dividerPositions="0.2505567928730512" focusTraversable="true" VBox.vgrow="ALWAYS">
+            <items>
+              <AnchorPane prefHeight="528.0" prefWidth="173.0" style="-fx-background-color: #db7093;" SplitPane.resizableWithParent="false">
+                     <children>
+                        <JFXButton accessibleText="Klasses" buttonType="RAISED" layoutX="10.0" layoutY="14.0" onAction="#changeContentOfMainPage" prefHeight="51.0" prefWidth="203.0" styleClass="leftButton" text="Classes" />
+                        <JFXButton accessibleText="Teachers" buttonType="RAISED" layoutX="10.0" layoutY="89.0" onAction="#changeContentOfMainPage" prefHeight="51.0" prefWidth="203.0" styleClass="leftButton" text="Teachers" />
+                        <JFXButton accessibleText="Subjects" buttonType="RAISED" layoutX="10.0" layoutY="157.0" onAction="#changeContentOfMainPage" prefHeight="51.0" prefWidth="203.0" styleClass="leftButton" text="Subjects" />
+                        <JFXButton accessibleText="Load" buttonType="RAISED" layoutX="10.0" layoutY="233.0" onAction="#changeContentOfMainPage" prefHeight="51.0" prefWidth="203.0" styleClass="leftButton" text="Teacher's Load" />
+                        <JFXButton accessibleText="Constrains" buttonType="RAISED" layoutX="10.0" layoutY="300.0" onAction="#changeContentOfMainPage" prefHeight="51.0" prefWidth="203.0" styleClass="leftButton" text="Constrains" />
+                        <JFXButton accessibleText="Timetable" buttonType="RAISED" layoutX="10.0" layoutY="379.0" onAction="#changeContentOfMainPage" prefHeight="51.0" prefWidth="203.0" styleClass="leftButton" text="Timetable" />
+                        <JFXButton accessibleText="Schools" buttonType="RAISED" layoutX="10.0" layoutY="444.0" onAction="#changeContentOfMainPage" prefHeight="51.0" prefWidth="203.0" styleClass="leftButton" text="Schools" />
+                     </children>
+              </AnchorPane>
+              <ScrollPane fx:id="mainScrollPane" prefHeight="-1.0" prefWidth="-1.0">
+                <content>
+                  <AnchorPane id="Content" minHeight="-1.0" minWidth="-1.0" prefHeight="545.0" prefWidth="430.0" />
+                </content>
+              </ScrollPane>
+            </items>
+          </SplitPane>
+          <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="NEVER">
+            <children>
+              <Label maxHeight="1.7976931348623157E308" maxWidth="-1.0" text="Left status" HBox.hgrow="ALWAYS">
+                <font>
+                  <Font size="11.0" fx:id="x3" />
+                </font>
+               
+              </Label>
+              <Pane prefHeight="-1.0" prefWidth="-1.0" HBox.hgrow="ALWAYS" />
+              <Label font="$x3" maxWidth="-1.0" text="Right status" HBox.hgrow="NEVER" />
+            </children>
+            <padding>
+              <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+            </padding>
+          </HBox>
+        </children>
+      </VBox>
+   </children>
+</StackPane>

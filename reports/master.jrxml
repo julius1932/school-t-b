@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE jasperReport PUBLIC "-//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+
+<jasperReport name="master" columnCount="4" pageWidth="800"  isIgnorePagination="true" columnWidth="150" columnSpacing="15" leftMargin="20" rightMargin="20" topMargin="30" bottomMargin="30">
+	<style name="Arial_Normal" isDefault="true" fontName="Arial" fontSize="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+	<style name="Arial_Bold" isDefault="false" fontName="Arial" fontSize="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+	<style name="Arial_Italic" isDefault="false" fontName="Arial" fontSize="8" isBold="false" isItalic="true" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Oblique" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+	<style name="Comic_Normal" isDefault="false" fontName="Comic Sans MS" fontSize="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="COMIC.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+	<style name="Comic_Bold" isDefault="false" fontName="Comic Sans MS" fontSize="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="COMICBD.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+	<parameter name="ReportTitle" class="java.lang.String">
+	</parameter>
+	<parameter name="qry" class="java.lang.String">
+	</parameter>
+	<parameter name="SummaryImage" class="java.awt.Image">
+	</parameter>
+	<queryString>         
+              <![CDATA[$P!{qry}]]>         
+       </queryString>   
+        <field name="slt0" class="java.lang.String"></field>     
+        <field name="sltAR" class="java.lang.String"></field>     
+        <field name="slt1" class="java.lang.String"></field> 
+        <field name="slt2" class="java.lang.String"></field> 
+        <field name="slt3" class="java.lang.String"></field> 
+        <field name="slt4" class="java.lang.String"></field> 
+        <field name="brkSlt" class="java.lang.String"></field> 
+        <field name="slt5" class="java.lang.String"></field> 
+        <field name="slt6" class="java.lang.String"></field> 
+        <field name="slt7" class="java.lang.String"></field> 
+        <field name="slt8" class="java.lang.String"></field> 
+        <field name="lnchSlt" class="java.lang.String"></field> 
+        <field name="slt9" class="java.lang.String"></field> 
+        <field name="slt10" class="java.lang.String"></field> 
+        <field name="slt11" class="java.lang.String"></field> 
+<title>
+            <band height="50">
+	        <textField isBlankWhenNull="true">
+		    <reportElement x="0" y="0" width="100" height="15" style="Arial_Italic"/>
+		    <textElement textAlignment="Left">
+			<font size="12"/>
+		    </textElement>
+                    <textFieldExpression  class="java.lang.String"><![CDATA[$P{ReportTitle}]]></textFieldExpression>
+                </textField>		
+            </band>
+	</title>
+	<pageHeader>
+		<band height="45">
+			
+			<staticText>
+				<reportElement x="0" y="0" width="400" height="25"/>
+				<textElement textAlignment="Center">
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[MASTER TIME TABLE]]></text>
+			</staticText>
+			
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="30">                     
+			<staticText>
+			    <reportElement mode="Opaque" x="0" y="0" width="30" height="30" forecolor="#ffffff" backcolor="#333333" style="Arial_Bold"/>
+			    <textElement textAlignment="Left"/>
+			    <text><![CDATA[
+
+Klass]]></text>
+			</staticText> 
+			<staticText>
+		            <reportElement mode="Opaque" x="30" y="0" width="30" height="30" forecolor="#333333" backcolor="#c0c0c0" style="Arial_Bold"/>
+			    <textElement textAlignment="Center"/>
+                            <text><![CDATA[A/REG
+07:20
+07:40]]></text>
+			</staticText> 
+			<staticText>
+		            <reportElement mode="Opaque" x="60" y="0" width="30" height="30" forecolor="#333333" backcolor="#c0c0c0" style="Arial_Bold"/>
+			    <textElement textAlignment="Center"/>
+                            <text><![CDATA[1  
+08:00 
+08:35]]></text>
+			</staticText> 
+			<staticText>
+		            <reportElement mode="Opaque" x="90" y="0" width="30" height="30" forecolor="#333333" backcolor="#c0c0c0" style="Arial_Bold"/>
+			    <textElement textAlignment="Center"/>
+                            <text><![CDATA[2  
+08:35 
+09:10]]></text>
+			</staticText> 
+			<staticText>
+		            <reportElement mode="Opaque" x="120" y="0" width="30" height="30" forecolor="#333333" backcolor="#c0c0c0" style="Arial_Bold"/>
+			    <textElement textAlignment="Center"/>
+                            <text><![CDATA[3  
+09:10 
+09:45]]></text>
+			</staticText> 
+			<staticText>
+		            <reportElement mode="Opaque" x="150" y="0" width="30" height="30" forecolor="#333333" backcolor="#c0c0c0" style="Arial_Bold"/>
+			    <textElement textAlignment="Center"/>
+                            <text><![CDATA[4  
+09:45 
+10:20]]></text>
+			</staticText> 
+			<staticText>
+				<reportElement mode="Opaque" x="180" y="0" width="30" height="30" forecolor="#333333" backcolor="#c0c0c0" style="Arial_Bold"/>
+				<textElement textAlignment="Center"/>
+                                <text><![CDATA[BREAK 
+10:20 
+10:50]]></text>
+			</staticText> 
+			<staticText>
+		            <reportElement mode="Opaque" x="210" y="0" width="30" height="30" forecolor="#333333" backcolor="#c0c0c0" style="Arial_Bold"/>
+			    <textElement textAlignment="Center"/>
+                            <text><![CDATA[5  
+10:50 
+11:25]]></text>
+			</staticText> 
+			<staticText>
+		            <reportElement mode="Opaque" x="240" y="0" width="30" height="30" forecolor="#333333" backcolor="#c0c0c0" style="Arial_Bold"/>
+			    <textElement textAlignment="Center"/>
+                            <text><![CDATA[6  
+11:25 
+12:00]]></text>
+			</staticText> 
+			<staticText>
+		            <reportElement mode="Opaque" x="270" y="0" width="30" height="30" forecolor="#333333" backcolor="#c0c0c0" style="Arial_Bold"/>
+			    <textElement textAlignment="Center"/>
+                            <text><![CDATA[7  
+12:00 
+12:35]]></text>
+			</staticText> 
+			<staticText>
+		            <reportElement mode="Opaque" x="300" y="0" width="30" height="30" forecolor="#333333" backcolor="#c0c0c0" style="Arial_Bold"/>
+			    <textElement textAlignment="Center"/>
+                            <text><![CDATA[8  
+12:35 
+13:10]]></text>
+			</staticText> 
+			<staticText>
+				<reportElement mode="Opaque" x="330" y="0" width="30" height="30" forecolor="#333333" backcolor="#c0c0c0" style="Arial_Bold"/>
+				<textElement textAlignment="Center"/>
+                                <text><![CDATA[LUNCH 
+13:10 
+14:10]]></text>
+			</staticText> 
+			<staticText>
+		            <reportElement mode="Opaque" x="360" y="0" width="30" height="30" forecolor="#333333" backcolor="#c0c0c0" style="Arial_Bold"/>
+			    <textElement textAlignment="Center"/>
+                            <text><![CDATA[9  
+14:10 
+14:45]]></text>
+			</staticText> 
+			<staticText>
+		            <reportElement mode="Opaque" x="390" y="0" width="30" height="30" forecolor="#333333" backcolor="#c0c0c0" style="Arial_Bold"/>
+			    <textElement textAlignment="Center"/>
+                            <text><![CDATA[10  
+14:45 
+15:20]]></text>
+			</staticText> 
+			<staticText>
+		            <reportElement mode="Opaque" x="420" y="0" width="30" height="30" forecolor="#333333" backcolor="#c0c0c0" style="Arial_Bold"/>
+			    <textElement textAlignment="Center"/>
+                            <text><![CDATA[11  
+15:20 
+15:55]]></text>
+			</staticText> 
+	</band>
+	</columnHeader>
+	<detail >
+		<band height="20">
+			<textField >
+				<reportElement x="0" y="0" width="30" height="20"  />
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{slt0}]]></textFieldExpression>
+			</textField> 
+			<textField >
+				<reportElement  x="30" y="0" width="30" height="20"  />
+                               <box border="Thin"/>
+				 
+                                <textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sltAR}]]></textFieldExpression>
+			</textField> 
+			<textField >
+				<reportElement  x="60" y="0" width="30" height="20"  />
+                               <box border="Thin"/>
+				 
+                                <textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{slt1}]]></textFieldExpression>
+			</textField> 
+			<textField >
+				<reportElement  x="90" y="0" width="30" height="20"  />
+                               <box border="Thin"/>
+				 
+                                <textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{slt2}]]></textFieldExpression>
+			</textField> 
+			<textField >
+				<reportElement  x="120" y="0" width="30" height="20"  />
+                               <box border="Thin"/>
+				 
+                                <textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{slt3}]]></textFieldExpression>
+			</textField> 
+			<textField >
+				<reportElement  x="150" y="0" width="30" height="20"  />
+                               <box border="Thin"/>
+				 
+                                <textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{slt4}]]></textFieldExpression>
+			</textField> 
+                        <textField >
+				<reportElement x="180" y="0" width="30" height="20"  mode="Opaque" backcolor="lightGray" style="Arial_Bold" />
+				<box border="Thin"/>
+                                <textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{brkSlt}]]></textFieldExpression>
+			</textField>
+			<textField >
+				<reportElement  x="210" y="0" width="30" height="20"  />
+                               <box border="Thin"/>
+				 
+                                <textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{slt5}]]></textFieldExpression>
+			</textField> 
+			<textField >
+				<reportElement  x="240" y="0" width="30" height="20"  />
+                               <box border="Thin"/>
+				 
+                                <textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{slt6}]]></textFieldExpression>
+			</textField> 
+			<textField >
+				<reportElement  x="270" y="0" width="30" height="20"  />
+                               <box border="Thin"/>
+				 
+                                <textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{slt7}]]></textFieldExpression>
+			</textField> 
+			<textField >
+				<reportElement  x="300" y="0" width="30" height="20"  />
+                               <box border="Thin"/>
+				 
+                                <textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{slt8}]]></textFieldExpression>
+			</textField> 
+                        <textField>
+				<reportElement x="330" y="0" width="30" height="20" mode="Opaque" backcolor="lightGray" style="Arial_Bold"/>
+                                 <box border="Thin"/>
+				<textElement textAlignment="Center" />
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{lnchSlt}]]></textFieldExpression>
+			</textField>
+			<textField >
+				<reportElement  x="360" y="0" width="30" height="20"  />
+                               <box border="Thin"/>
+				 
+                                <textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{slt9}]]></textFieldExpression>
+			</textField> 
+			<textField >
+				<reportElement  x="390" y="0" width="30" height="20"  />
+                               <box border="Thin"/>
+				 
+                                <textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{slt10}]]></textFieldExpression>
+			</textField> 
+			<textField >
+				<reportElement  x="420" y="0" width="30" height="20"  />
+                               <box border="Thin"/>
+				 
+                                <textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{slt11}]]></textFieldExpression>
+			</textField> 
+			<line>
+				<reportElement positionType="Float" x="30" y="0" width="420" height="1" forecolor="#808080"/>
+				<graphicElement pen="Thin"/>
+			</line>
+		</band>
+	</detail>
+	
+	<pageFooter>
+		
+	</pageFooter>
+	<summary>
+		<band height="50">
+			<rectangle>
+				<reportElement x="0" y="10" width="450" height="35" backcolor="#c0c0c0"/>
+				<graphicElement/>
+			</rectangle>
+			
+			<staticText>
+				<reportElement mode="Opaque" x="200" y="15" width="200" height="20" backcolor="#c0c0c0"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[CHERUTOMBO@2018]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

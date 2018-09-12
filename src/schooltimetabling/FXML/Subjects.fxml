@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="schooltimetabling.SubjectController">
+   <children>
+      <TabPane fx:id="tabPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="1024.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab fx:id="addSubTab" text="Enter Subject">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <JFXTextField fx:id="code" labelFloat="true" layoutX="245.0" layoutY="77.0" prefHeight="25.0" prefWidth="355.0" promptText="Subject Code" />
+                        <JFXTextField fx:id="name" labelFloat="true" layoutX="240.0" layoutY="177.0" prefHeight="25.0" prefWidth="360.0" promptText="Subject Name" />
+                        <JFXButton fx:id="login" buttonType="RAISED" layoutX="498.0" layoutY="276.0" onAction="#clearFields" prefHeight="33.0" prefWidth="102.0" ripplerFill="WHITE" style="-fx-background-color: #2196f3;" text="Cancel" textFill="WHITE" />
+                        <JFXButton fx:id="login1" buttonType="RAISED" layoutX="245.0" layoutY="276.0" onAction="#saveSubjects" prefHeight="33.0" prefWidth="102.0" ripplerFill="WHITE" style="-fx-background-color: #2196f3;" text="Save" textFill="WHITE" />
+                        <Label fx:id="label" layoutX="14.0" layoutY="17.0" prefHeight="28.0" prefWidth="641.0">
+                           <font>
+                              <Font name="AR CHRISTY" size="19.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="View Subjects">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="table" layoutX="59.0" layoutY="84.0" prefHeight="363.0" prefWidth="700.0">
+                          <columns>
+                            <TableColumn fx:id="codeColumn" prefWidth="231.0" text="Subject Code " />
+                            <TableColumn fx:id="nameColumn" prefWidth="464.0" text="Subject" />
+                          </columns>
+                        </TableView>
+                        <JFXTextField fx:id="subSearch" layoutX="452.0" layoutY="48.0" prefHeight="25.0" prefWidth="236.0" />
+                        <JFXButton layoutX="697.0" layoutY="48.0" onAction="#searchSubsActionButton" prefHeight="25.0" prefWidth="69.0" text="Search" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

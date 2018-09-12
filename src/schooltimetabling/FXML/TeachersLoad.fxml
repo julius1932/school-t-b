@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="schooltimetabling.TeacherLoadController">
+   <children>
+      <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="669.0" prefWidth="1093.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab text="Give Load">
+            <content>
+              <AnchorPane fx:id="giveloadAcrchPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <JFXButton buttonType="RAISED" layoutX="534.0" layoutY="462.0" onAction="#clearFields" prefHeight="33.0" prefWidth="102.0" ripplerFill="WHITE" style="-fx-background-color: #2196f3;" text="Cancel" textFill="WHITE" />
+                        <JFXButton buttonType="RAISED" layoutX="235.0" layoutY="462.0" onAction="#saveTeacherLoad" prefHeight="33.0" prefWidth="102.0" ripplerFill="WHITE" style="-fx-background-color: #2196f3;" text="Save" textFill="WHITE" />
+                        <JFXComboBox fx:id="teacher" labelFloat="true" layoutX="235.0" layoutY="61.0" prefHeight="25.0" prefWidth="387.0" promptText="Teacher" />
+                        <JFXComboBox fx:id="subject" labelFloat="true" layoutX="235.0" layoutY="173.0" prefHeight="25.0" prefWidth="387.0" promptText="Subject" />
+                        <Label layoutX="235.0" layoutY="208.0" prefHeight="17.0" prefWidth="168.0" text="Classes" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="View ">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="table" layoutX="71.0" layoutY="79.0" prefHeight="414.0" prefWidth="794.0">
+                          <columns>
+                            <TableColumn fx:id="klassColumn" prefWidth="81.0" text="Class" />
+                              <TableColumn fx:id="subjectColumn" prefWidth="347.0" text="Subject" />
+                              <TableColumn fx:id="teacherColumn" prefWidth="451.0" text="Teacher" />
+                          </columns>
+                        </TableView>
+                        <JFXComboBox fx:id="searchKeyCombo" layoutX="294.0" layoutY="36.0" onAction="#searchKeyOnAction" prefHeight="25.0" prefWidth="205.0" promptText="Search key" />
+                        <JFXComboBox fx:id="searchComboValue" layoutX="525.0" layoutY="36.0" prefHeight="25.0" prefWidth="252.0" promptText="Data Value" />
+                        <JFXButton layoutX="797.0" layoutY="36.0" onAction="#showButtonOnAction" prefHeight="25.0" prefWidth="65.0" text="Search" />
+                        <JFXButton layoutX="387.0" layoutY="540.0" onAction="#printAlloctions" prefHeight="25.0" prefWidth="165.0" text="Print" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
